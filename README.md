@@ -53,7 +53,8 @@ The scope is intentionally realistic, with features added incrementally.
 ## Live demo
 
 👉 **Live app:**  
-_Link_Will_Be_Added_When_hosted_
+
+[Car-Cost-Tracker-Demo](https://ppatel2301.github.io/Car-Cost-Tracker/)  
 
 ---
 
