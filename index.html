@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Car Cost Tracker</title>
   <link rel="stylesheet" href="index.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
   <main class="card">
     <h1>Car Cost Tracker</h1>
@@ -42,9 +44,67 @@
       <button id="clearBtn" class="link">Clear Garage</button>
     </section>
 
+    <section class="chart">
+      <h2>Estimated Monthly Cost Breakdown</h2>
+      <canvas id="costChart"></canvas>
+    </section>
+
+    <section class="calc">
+      <h2>Monthly Cost Estimate</h2>
+      <p class="muted">Pick a car from your garage, enter estimates, and save a monthly cost snapshot.</p>
+
+      <div class="calcGrid">
+        <div>
+          <label for="carSelect">Car</label>
+          <select id="carSelect">
+            <option value="">Select a car</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="insurance">Insurance ($/month)</label>
+          <input id="insurance" type="number" min="0" step="1" placeholder="e.g., 180" />
+        </div>
+
+        <div>
+          <label for="loan">Loan/Payment ($/month)</label>
+          <input id="loan" type="number" min="0" step="1" placeholder="e.g., 320" />
+        </div>
+
+        <div>
+          <label for="parking">Parking ($/month)</label>
+          <input id="parking" type="number" min="0" step="1" placeholder="e.g., 60" />
+        </div>
+
+        <div>
+          <label for="kms">Km per month</label>
+          <input id="kms" type="number" min="0" step="10" placeholder="e.g., 900" />
+        </div>
+
+        <div>
+          <label for="lPer100">Fuel (L/100km)</label>
+          <input id="lPer100" type="number" min="0" step="0.1" placeholder="e.g., 8.5" />
+        </div>
+
+        <div>
+          <label for="pricePerL">Fuel price ($/L)</label>
+          <input id="pricePerL" type="number" min="0" step="0.01" placeholder="e.g., 1.45" />
+        </div>
+
+        <div>
+          <label for="maintenance">Maintenance budget ($/month)</label>
+          <input id="maintenance" type="number" min="0" step="1" placeholder="e.g., 50" />
+        </div>
+
+        <button id="calcBtn" disabled>Calculate & Save</button>
+      </div>
+
+      <div id="resultBox" class="result" hidden></div>
+    </section>
+
     <footer>
       <p>
-        Next step: add a real monthly cost estimate (fuel, insurance, maintenance) and basic charts.
+        © 2026 Car Cost Tracker. Built as a personal project.
       </p>
     </footer>
   </main>
